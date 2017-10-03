@@ -49,7 +49,7 @@ createLevelLogger = (name, levelName, opts) => {
     let levelStr = ``, nameStr = ``
     if (opts.padNames) {
       levelStr = padStart(`[${levelName}]`, utils.maxLevelNameLength() + 2)
-      nameStr = padEnd(`{${name}]`, Math.max(utils.maxNameLength(loggers), opts.minNameLength) + 2)
+      nameStr = padEnd(`[${name}]`, Math.max(utils.maxNameLength(loggers), opts.minNameLength) + 2)
     } else {
       levelStr = `[${levelName}]`
       nameStr = `[${name}]`
