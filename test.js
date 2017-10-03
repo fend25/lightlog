@@ -25,4 +25,9 @@ Promise.resolve(delay(100)).then(() => {
   dev2.fatal(4)
   dev3.error(5)
   dev2.warn(6)
+
+  const a = {c: 1}
+  const b = {c: 2, sibling: a}
+  a.sibling = b
+  dev.info(a)
 })

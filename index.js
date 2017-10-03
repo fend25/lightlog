@@ -22,7 +22,7 @@ const toStr = (param, {prettyJson, printStackTrace, singleLine, trimLines}) => {
     if (printStackTrace) s = param.stack
     else s = param.toString()
   }
-  else s = JSON.stringify(param, null, prettyJson ? 2 : 0)
+  else s = JSON.stringify(param, utils.serializer(), prettyJson ? 2 : 0)
 
   if (typeof s === `string`) {
     if (trimLines) s = s.split(`\n`).map(el => el.trim()).join(`\n`)
