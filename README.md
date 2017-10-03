@@ -91,4 +91,4 @@ const DEFAULT_PROD_OPTS = {
 You can create your own options object from scratch or get and change any default one.
 
 # license
-MIT
+ISC
