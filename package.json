@@ -1,0 +1,15 @@
+{
+  "name": "lightlog",
+  "version": "1.0.0",
+  "description": "Lightweight logger to stdout/stderr which can be safely used as lambda. Without any dependencies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "log",
+    "logger"
+  ],
+  "author": "fend25",
+  "license": "ISC"
+}
