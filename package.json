@@ -3,6 +3,10 @@
   "version": "1.0.2",
   "description": "Lightweight logger to stdout/stderr which can be safely used as lambda. Without any dependencies.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:fend25/lightlog.git"
+  },
   "scripts": {
     "test": "node test.js"
   },
