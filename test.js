@@ -27,7 +27,8 @@ Promise.resolve(delay(100)).then(() => {
   dev2.warn(6)
 
   const a = {c: 1}
-  const b = {c: 2, sibling: a}
-  a.sibling = b
+  a.sibling = {c: 2, sibling: a}
   dev.info(a)
+  
+  dev.info(Buffer.from('abc'))
 })

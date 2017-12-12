@@ -1,6 +1,6 @@
 {
   "name": "lightlog",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Lightweight logger to stdout/stderr which can be safely used as lambda. Without any dependencies.",
   "main": "index.js",
   "repository": {

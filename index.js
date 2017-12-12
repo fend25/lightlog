@@ -1,4 +1,5 @@
 const utils = require(`./utils`)
+const util = require(`util`)
 const COLORS = utils.COLORS
 const LEVELS = utils.LEVELS
 const formatTs = utils.formatTs
@@ -18,6 +19,7 @@ const DEFAULT_PROD_OPTS = utils.DEFAULT_PROD_OPTS
 const toStr = (param, {prettyJson, printStackTrace, singleLine, trimLines}) => {
   let s = null
   if (typeof param !== `object`) s = String(param)
+  else if (Buffer.isBuffer(param)) s = util.format(param)
   else if (param instanceof Error) {
     if (printStackTrace) s = param.stack
     else s = param.toString()
@@ -57,7 +59,7 @@ createLevelLogger = (name, levelName, opts) => {
 
     const prefix = `${colorPrefix}[${opts.UTC ? new Date().toJSON() : formatTs()}] ${levelStr} ${nameStr} - ${colorSuffix}`
     const str = prefix + params.map(p => toStr(p, opts)).join(` `) + `\n`
-    
+
     const output = (level.level >= opts.toStdErrFromLevel) ? `stderr` : `stdout`
     process[output].write(str)
   }
