@@ -90,5 +90,12 @@ const DEFAULT_PROD_OPTS = {
 
 You can create your own options object from scratch or get and change any default one.
 
+Also, you can set some logLevel globally one time (which can be overrided manually in `getLogger` further)`
+```js
+lightlog.setGlobalLogLevel('warn')
+```
+Just `warn`, `error` and `fatal` will be still printed
+
+
 # license
 ISC
