@@ -34,6 +34,7 @@ type Level = {
 
 export function getLogger(name: string, opts?: Options): Logger
 export function setGlobalLogLevel(logLevel: string): void
+export function setGlobalOpts(opts: Partial<Options>): void
 
 export type DEFAULT_DEV_OPTS = Options
 export type DEFAULT_PROD_OPTS = Options

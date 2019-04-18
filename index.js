@@ -65,10 +65,11 @@ createLevelLogger = (name, levelName, opts) => {
   }
 }
 
-const optsToUse = process.env.NODE_ENV === `production` ? DEFAULT_PROD_OPTS : DEFAULT_DEV_OPTS
+const optsToUse = Object.assign({}, process.env.NODE_ENV === `production` ? DEFAULT_PROD_OPTS : DEFAULT_DEV_OPTS)
 const setGlobalLogLevel = (logLevel) => {
   optsToUse.logLevel = logLevel
 }
+const setGlobalOpts = opts => Object.assign(optsToUse, opts)
 
 /**
  * creates log object according provided name and opts
@@ -101,6 +102,7 @@ const getLogger = (name, _opts) => {
 module.exports = {
   getLogger,
   setGlobalLogLevel,
+  setGlobalOpts,
   LEVELS,
   DEFAULT_DEV_OPTS,
   DEFAULT_PROD_OPTS,
